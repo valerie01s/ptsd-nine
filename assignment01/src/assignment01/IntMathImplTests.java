@@ -24,6 +24,7 @@ class IntMathImplTests {
 		assertEquals(4, math.gcd(-16, 4));
 		assertEquals(12, math.gcd(12, -48));
 		assertEquals(100, math.gcd(-100, -100));
+		assertEquals(1, math.gcd(91, 150));
 	}
 	
 	@Test
@@ -42,7 +43,8 @@ class IntMathImplTests {
 	@Test
 	void testEdgeCaseGCD() {
 		assertEquals(Integer.MAX_VALUE, math.gcd(Integer.MAX_VALUE, Integer.MAX_VALUE));
-	    assertThrows(IllegalArgumentException.class, () -> math.gcd(Integer.MIN_VALUE, Integer.MIN_VALUE));
+		assertThrows(IllegalArgumentException.class, () -> math.gcd(Integer.MIN_VALUE, Integer.MIN_VALUE));
+	    assertEquals(1, math.gcd(Integer.MAX_VALUE, Integer.MIN_VALUE));
 	}
 
 }
